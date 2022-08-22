@@ -17,7 +17,7 @@ def get_db_connection():
                                 password=os.environ['POSTGRES_PASSWORD'])
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         cur = conn.cursor()
-        cur.execute("SELECT 'CREATE DATABASE flask_db' WHERE NOT EXISTS(SELECT FROM pg_database WHERE datname = 'flask_db') ;")
+        #cur.execute("SELECT 'CREATE DATABASE flask_db' WHERE NOT EXISTS(SELECT FROM pg_database WHERE datname = 'flask_db') ;")
 
     cur.execute('CREATE TABLE  IF NOT EXISTS students (id serial PRIMARY KEY,'
                 'fname varchar (30) NOT NULL,'
